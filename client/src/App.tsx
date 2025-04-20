@@ -6,8 +6,9 @@ import NotFound from "@/pages/not-found";
 import HomePage from "@/pages/HomePage";
 import Services from "./components/sections/Services";
 import Register from "./components/sections/Register";
-
-
+import WhyChooseUs from "./components/sections/WhyChooseUs";
+import WhoCanJoin from "./components/sections/WhoCanJoin";
+import Contact from "./components/sections/Contact";
 function Router() {
   return (
     <>
@@ -15,7 +16,9 @@ function Router() {
       <Route path="/" component={HomePage} />
       <Route path="/services" component={Services} />
       <Route path="/register" component={Register} />
-      
+      <Route path="/WhyChooseUs" component={WhyChooseUs} />
+      <Route path="/WhoCanJoin" component={WhoCanJoin} />
+      <Route path="/Contact" component={Contact} />
     </>
   );
 }
