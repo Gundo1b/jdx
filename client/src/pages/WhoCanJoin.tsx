@@ -1,11 +1,12 @@
+import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/Header";
 import { Heading } from "lucide-react";
-import Footer from "../layout/Footer";
-import Header from "../layout/Header";
+
 
 const WhoCanJoin = () => {
   return (
-
-     
+    <>
+   <Header/>
     <section id="who-can-join" className="py-16 bg-gradient-to-r from-primary/5 to-purple-500/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
@@ -67,6 +68,8 @@ const WhoCanJoin = () => {
 
       
     </section>
+    <Footer/>
+    </>
     
   );
 };

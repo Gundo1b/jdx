@@ -1,9 +1,12 @@
+import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/Header";
 import React from "react";
-import Header from "../layout/Header";
-import Footer from "../layout/Footer";
+
 
 const WhyChooseUs = () => {
   return (
+    <>
+    <Header />
     
     <section id="why-us" className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -47,6 +50,8 @@ const WhyChooseUs = () => {
         </div>
       </div>
     </section>
+    <Footer/>
+    </>
     
   );
 };

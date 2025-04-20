@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import emailjs from "emailjs-com";
-import Footer from "../layout/Footer";
-import Header from "../layout/Header";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
 const RegisterPage = () => {
   const [formData, setFormData] = useState({
@@ -98,7 +98,10 @@ const RegisterPage = () => {
 
   return (
     <>
-      <Header />
+    <Header/>
+    
+    
+   
       <div className="min-h-screen bg-gradient-to-r from-blue-100 to-purple-100 p-8">
         <div className="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg">
           <h2 className="text-3xl font-bold text-center text-purple-700 mb-6">Student Registration</h2>
@@ -166,8 +169,8 @@ const RegisterPage = () => {
           </form>
         </div>
       </div>
-      <Footer />
-    </>
+      <Footer/>
+      </>
   );
 };
 

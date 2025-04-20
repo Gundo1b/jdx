@@ -23,8 +23,9 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import Footer from "../layout/Footer";
-import Header from "../layout/Header";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+
 
 const contactFormSchema = z.object({
   firstName: z.string().min(1, { message: "First name is required" }),
@@ -96,6 +97,8 @@ const Contact = () => {
   };
 
   return (
+    <>
+    <Header/>
     
     
    
@@ -190,6 +193,7 @@ const Contact = () => {
                         <SelectItem value="both">Mathematics</SelectItem>
                         <SelectItem value="mathematics">Commerce </SelectItem>
                         <SelectItem value="mathematics">Other</SelectItem>
+                        
                       </SelectContent>
                     </Select>
                     <FormMessage />
@@ -216,35 +220,34 @@ const Contact = () => {
                     </Select>
                     <FormMessage />
                   </FormItem>
-                  
                 )}
               />
 
-<FormField
-                control={form.control}
-                name="classType"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Grade</FormLabel>
-                    <Select onValueChange={field.onChange} defaultValue={field.value}>
-                      <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select class type" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        <SelectItem value="online">Grade 1 - 6 </SelectItem>
-                        <SelectItem value="online">Grade 7 - 9 </SelectItem>
-                        <SelectItem value="online">Grade 10 - 12  </SelectItem>
-                        <SelectItem value="online">Varsity/ College.</SelectItem>
-                        <SelectItem value="in-person">Other </SelectItem>
-                      </SelectContent>
-                    </Select>
-                    <FormMessage />
-                  </FormItem>
-                  
-                )}
-              />
+              <FormField
+              control={form.control}
+                              name="classType"
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel>Grade</FormLabel>
+                                  <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                    <FormControl>
+                                      <SelectTrigger>
+                                        <SelectValue placeholder="Select Grade" />
+                                      </SelectTrigger>
+                                    </FormControl>
+                                    <SelectContent>
+                                      <SelectItem value="online">Grade 1 - 6 </SelectItem>
+                                      <SelectItem value="online">Grade 7 - 9 </SelectItem>
+                                      <SelectItem value="online">Grade 10 - 12  </SelectItem>
+                                      <SelectItem value="online">Varsity/ College.</SelectItem>
+                                      <SelectItem value="in-person">Other </SelectItem>
+                                    </SelectContent>
+                                  </Select>
+                                  <FormMessage />
+                                </FormItem>
+                                
+                              )}
+                            />
 
               <FormField
                 control={form.control}
@@ -268,8 +271,8 @@ const Contact = () => {
         </div>
       </div>
     </section>
-    
-    
+    <Footer/>
+    </>
   );
 };
 

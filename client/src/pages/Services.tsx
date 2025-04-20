@@ -1,3 +1,5 @@
+import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/Header";
 import { Button } from "@/components/ui/button";
 
 const Services = () => {
@@ -12,6 +14,9 @@ const Services = () => {
   };
 
   return (
+    <>
+    <Header/>
+    
     
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
@@ -136,6 +141,8 @@ const Services = () => {
           
         </div>
       </div>
+      <Footer/> 
+      </>
     
   );
 };
