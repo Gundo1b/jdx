@@ -5,14 +5,18 @@ import { Toaster } from "@/components/ui/toaster";
 import NotFound from "@/pages/not-found";
 import HomePage from "@/pages/HomePage";
 import Services from "./components/sections/Services";
+import Register from "./components/sections/Register";
+
 
 function Router() {
   return (
-    <Switch>
+    <>
+      {/* Define Routes using `Route` from wouter */}
       <Route path="/" component={HomePage} />
-      <Route path="/Services" component={Services}/>
-      <Route component={NotFound} />
-    </Switch>
+      <Route path="/services" component={Services} />
+      <Route path="/register" component={Register} />
+      
+    </>
   );
 }
 

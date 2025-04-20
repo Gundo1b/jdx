@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import emailjs from "emailjs-com";
 import {
   Form,
   FormControl,
@@ -55,39 +56,41 @@ const Contact = () => {
   const onSubmit = async (data: ContactFormValues) => {
     setIsSubmitting(true);
 
-    const {
+    const { firstName, lastName, email, phone, subject, classType, message } = data;
+
+    // EmailJS template data
+    const emailData = {
       firstName,
       lastName,
       email,
       phone,
       subject,
       classType,
-      message,
-    } = data;
+      message: message || "N/A",
+    };
 
-    const fullMessage = `
-Hello! I'd like to book a class.
+    try {
+      // Send email using EmailJS
+      await emailjs.send(
+        "service_7ag1xaq", // Replace with your EmailJS service ID
+        "template_24z8ulq", // Replace with your EmailJS template ID
+        emailData,
+        "Xvf-gSyaxD4Drv3g_" // Replace with your EmailJS user ID
+      );
 
-👤 Name: ${firstName} ${lastName}
-📧 Email: ${email}
-📞 Phone: ${phone}
-📚 Subject: ${subject}
-🏫 Class Type: ${classType}
-📝 Message: ${message || "N/A"}
-`;
-
-    const encodedMessage = encodeURIComponent(fullMessage);
-    const whatsappNumber = "27722407796"; // Replace with your WhatsApp number in international format
-
-    window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, "_blank");
-
-    toast({
-      title: "Redirecting to WhatsApp...",
-      description: "Your class request will be sent via WhatsApp.",
-    });
-
-    form.reset();
-    setIsSubmitting(false);
+      toast({
+        title: "Success!",
+        description: "Your message has been sent successfully.",
+      });
+      form.reset();
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "There was an error sending your message.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -101,7 +104,7 @@ Hello! I'd like to book a class.
         </div>
 
         <div className="bg-gray-50 p-8 rounded-lg shadow-md">
-          <h3 className="text-2xl font-semibold text-gray-800 mb-6">Book a Class</h3>
+          <h3 className="text-2xl font-semibold text-gray-800 mb-6">Enquiry Form</h3>
 
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -223,7 +226,7 @@ Hello! I'd like to book a class.
               />
 
               <Button type="submit" disabled={isSubmitting} className="w-full">
-                {isSubmitting ? "Submitting..." : "Send via WhatsApp"}
+                {isSubmitting ? "Submitting..." : "Send Email"}
               </Button>
             </form>
           </Form>
