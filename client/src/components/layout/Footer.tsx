@@ -43,8 +43,8 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><button onClick={() => scrollToSection("home")} className="text-gray-300 hover:text-white transition-colors">Home</button></li>
               <li><button onClick={() => scrollToSection("services")} className="text-gray-300 hover:text-white transition-colors">Services</button></li>
-              <li><button onClick={() => scrollToSection("why-us")} className="text-gray-300 hover:text-white transition-colors">Why Choose Us</button></li>
-              <li><button onClick={() => scrollToSection("who-can-join")} className="text-gray-300 hover:text-white transition-colors">Who Can Join</button></li>
+              <li><button onClick={() => scrollToSection("About")} className="text-gray-300 hover:text-white transition-colors">About</button></li>
+              {/* <li><button onClick={() => scrollToSection("who-can-join")} className="text-gray-300 hover:text-white transition-colors">Who Can Join</button></li> */}
               <li><button onClick={() => scrollToSection("contact")} className="text-gray-300 hover:text-white transition-colors">Contact</button></li>
             </ul>
           </div>
@@ -53,11 +53,12 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-semibold mb-4">Our Services</h3>
             <ul className="space-y-2">
-              <li><Link href="#" className="text-gray-300 hover:text-white transition-colors">Online Tutoring</Link></li>
+            
+              <li><Link href="#" className="text-gray-300 hover:text-white transition-colors">Matric Upgrade</Link></li>
+              <li><Link href="#" className="text-gray-300 hover:text-white transition-colors">Saturday School</Link></li>
+              <li><Link href="#" className="text-gray-300 hover:text-white transition-colors">Extra Classes</Link></li>
+              <li><Link href="#" className="text-gray-300 hover:text-white transition-colors">Varsity / College Tutoring</Link></li>
               <li><Link href="#" className="text-gray-300 hover:text-white transition-colors">In-Person Classes</Link></li>
-              <li><Link href="#" className="text-gray-300 hover:text-white transition-colors">Group Sessions</Link></li>
-              <li><Link href="#" className="text-gray-300 hover:text-white transition-colors">Exam Preparation</Link></li>
-              <li><Link href="#" className="text-gray-300 hover:text-white transition-colors">Homework Help</Link></li>
             </ul>
           </div>
           

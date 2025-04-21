@@ -60,9 +60,9 @@ const Header = () => {
             <Link href="/About" className="text-gray-700 hover:text-primary font-medium transition-colors">
              About
             </Link>
-            <Link href="/WhoCanJoin" className="text-gray-700 hover:text-primary font-medium transition-colors">
+            {/* <Link href="/WhoCanJoin" className="text-gray-700 hover:text-primary font-medium transition-colors">
               Who Can Join
-            </Link>
+            </Link> */}
             <Link href="/Contact" className="text-gray-700 hover:text-primary font-medium transition-colors">
               Contact
             </Link>
@@ -110,7 +110,7 @@ const Header = () => {
           >
             Services
           </Link>
-          <button
+          {/* <button
             onClick={() => scrollToSection("why-us")}
             className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50"
           >
@@ -121,7 +121,7 @@ const Header = () => {
             className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50"
           >
             Who Can Join
-          </button>
+          </button> */}
           <button
             onClick={() => scrollToSection("contact")}
             className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50"
